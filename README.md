@@ -2,18 +2,19 @@
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![Playwright](https://img.shields.io/badge/Playwright-Async-green)
+![Flask](https://img.shields.io/badge/Flask-2.3%2B-cyan)
 ![OOP](https://img.shields.io/badge/Code%20Style-OOP-orange)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
-A Python automation tool that fetches the **price**, **rating**, and **product link** for any electronic products from **4 major e-commerce websites** — **Amazon**, **Flipkart**, **Reliance Digital**, and **Croma** — allowing quick **side-by-side comparison** to find the best deals.
 
-> **Note:** Flask-based web interface is under development to make the bot accessible from any browser.
+A Python automation tool that fetches the **price**, **rating**, and **product link** for any electronic products from **4 major e-commerce websites** — **Amazon**, **Flipkart**, **Reliance Digital**, and **Croma** — allowing quick **side-by-side comparison** to find the best deals.
 
 ---
 
 ##  Features
 -  Scrapes product **price**, **rating**, and **link** from multiple sites
 -  Uses **Playwright Async** for fast, reliable browser automation
+-  **Flask**-based web interface to make the bot more user friendly
 -  **Fuzzy matching** to select the best search result
 -  **Regex-powered** data cleaning and extraction
 -  Side-by-side comparison for smarter buying decisions
@@ -24,6 +25,7 @@ A Python automation tool that fetches the **price**, **rating**, and **product l
 - **Python**
 - **Object-Oriented Programming (OOP)**
 - **Playwright (Async)**
+- **Flask**
 - **RapidFuzz**
 - **Regular Expressions (re)**
 
