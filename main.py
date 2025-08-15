@@ -40,10 +40,9 @@ def preprocess(text):
     return text
 
 
-async def main():
-    query = input("Enter product to search: ")
-
+async def scrape_product(query):
     MIN_MATCH_SCORE = 60
+    results = []
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=False)
@@ -120,13 +119,33 @@ async def main():
             )
 
             if best_product:
-                print(f"\nBest match from {site} (Score: {score})")
-                print(f"Name: {best_product['name']}")
-                print(f"Price: {best_product['price']}")
-                print(f"Rating: {best_product['rating']}")
-                print(f"Link: {best_product['link']}")
-                print("-" * 50)
+                results.append(
+                    {
+                        "site": site,
+                        "name": best_product["name"],
+                        "price": best_product["price"],
+                        "rating": best_product["rating"],
+                        "link": best_product["link"],
+                    }
+                )
+    return results
+
+
+# CLI entry point
+async def cli_main():
+    query = input("Enter product to search: ")
+    results = await scrape_product(query)
+    if not results:
+        print("No results found.")
+    else:
+        for r in results:
+            print(f"\nBest match from {r['site']}")
+            print(f"Name: {r['name']}")
+            print(f"Price: {r['price']}")
+            print(f"Rating: {r['rating']}")
+            print(f"Link: {r['link']}")
+            print("-" * 50)
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(cli_main())
