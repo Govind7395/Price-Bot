@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %} Price Bro {% endblock %}</title>
+    <title>{% block title %} PriceBot {% endblock %}</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ url_for('static', path='favicon.png') }}">
@@ -570,7 +570,7 @@
     <nav>
         <div class="logo">
             <img src="{{ url_for('static', path='images/bot_logo.png') }}" alt="Bot Logo" style="height:40px;">
-            Price Bro
+            PriceBot
         </div>
         <div>
             <a href="{{ url_for('about') }}">About Us</a>
@@ -580,7 +580,7 @@
     {% if request.url.path == '/' %}
     <!-- Header -->
     <header>
-        <h1>Price Bro</h1>
+        <h1>PriceBot</h1>
         <h2>Easily compare prices across top shopping sites</h2>
     </header>
 
@@ -671,7 +671,7 @@
 
     <!-- Footer -->
     <footer>
-        © 2025 PriceBro Inc. All rights reserved. Unauthorized duplication or distribution is prohibited.
+        © 2025 PriceBot Inc. All rights reserved. Unauthorized duplication or distribution is prohibited.
         <br>
         <a href="{{ url_for('privacy') }}">Privacy Policy</a>
         | <a href="{{ url_for('terms') }}">Terms of Service</a>
