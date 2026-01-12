@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Privacy Policy - PriceBot{% endblock %}
+
+{% block content %}
+<section style="max-width:900px;margin:0 auto;padding:30px;color:#eee;line-height:1.6;">
+    <h1 style="font-size:2.2rem;margin-bottom:20px;">Privacy Policy</h1>
+
+    <p><strong>Last Updated:</strong> January 1, 2025</p>
+
+    <p>
+        Welcome to BrokeBro! We respect your privacy and are committed to protecting it.
+        This Privacy Policy explains how we collect, use, and safeguard your information.
+        Please note: half of this is legal gibberish to look professional 🤷.
+    </p>
+
+    <h2>1. Information We Collect</h2>
+    <p>
+        - When you search products, we may collect basic data like query terms.
+        - We do not collect your DNA, shoe size, or your grandmother’s secret recipes.
+        - Some anonymous logs may be generated for site analytics (mostly us staring at charts pretending to be busy).
+    </p>
+
+    <h2>2. How We Use Your Information</h2>
+    <p>
+        - To show you product comparisons (duh).
+        - To improve our services (aka adding more bugs).
+        - To ensure Spider-Man doesn’t crash our servers while swinging around in the code.
+    </p>
+
+    <h2>3. Sharing of Information</h2>
+    <p>
+        We do not sell or rent your personal data.
+        Unless Jeff Bezos offers us a trillion dollars, in which case… well, we’ll think about it.
+    </p>
+
+    <h2>4. Data Security</h2>
+    <p>
+        We implement "industry-standard" practices such as passwords on sticky notes,
+        and shouting at the server until it obeys.
+    </p>
+
+    <h2>5. Your Rights</h2>
+    <p>
+        You may contact us anytime to:
+        - Request deletion of your non-existent data.
+        - Ask why this Privacy Policy contains jokes.
+        - Tell us we need to get a life.
+    </p>
+
+    <h2>6. Changes to This Policy</h2>
+    <p>
+        We may update this Privacy Policy randomly, usually at 3 AM after too much coffee.
+    </p>
+
+    <h2>7. Contact Us</h2>
+    <p>
+        For any questions, complaints, or memes, please visit our
+        <a href="{{ url_for('contact') }}" style="color:#ff4d4d;">Contact Page</a>.
+    </p>
+</section>
+{% endblock %}

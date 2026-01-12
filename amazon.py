@@ -20,7 +20,7 @@ class Amazon(BaseScraper):
                 "Object.defineProperty(navigator, 'webdriver', { get: () => undefined });"
             )
 
-            await page.goto("https://www.amazon.in/", wait_until="domcontentloaded")
+            await page.goto("https://www.amazon.in/", wait_until="load", timeout=30000)
             await page.mouse.move(random.randint(100, 800), random.randint(100, 600))
             await asyncio.sleep(random.uniform(1, 2))
 
@@ -105,6 +105,15 @@ class Amazon(BaseScraper):
                     except:
                         link = "N/A"
 
+                    try:
+                        image_url = await card.locator("img.s-image").get_attribute(
+                            "src"
+                        )
+                        if not image_url:
+                            image_url = "N/A"
+                    except:
+                        image_url = "N/A"
+
                     self.results.append(
                         {
                             "site": "Amazon",
@@ -112,6 +121,7 @@ class Amazon(BaseScraper):
                             "price": price.strip() if isinstance(price, str) else price,
                             "rating": rating,
                             "link": link,
+                            "image": image_url.strip(),
                         }
                     )
 

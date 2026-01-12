@@ -2,8 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![Playwright](https://img.shields.io/badge/Playwright-Async-green)
-![Flask](https://img.shields.io/badge/Flask-2.3%2B-cyan)
-![OOP](https://img.shields.io/badge/Code%20Style-OOP-orange)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
 
@@ -12,21 +11,23 @@ A Python automation tool that fetches the **price**, **rating**, and **product l
 ---
 
 ##  Features
--  Scrapes product **price**, **rating**, and **link** from multiple sites
+-  Scrapes product **price**, **rating**, **product image** and **link** from multiple sites
 -  Uses **Playwright Async** for fast, reliable browser automation
--  **Flask**-based web interface to make the bot more user friendly
--  **Fuzzy matching** to select the best search result
--  **Regex-powered** data cleaning and extraction
+-  Built using **FastAPI** for modern web performance
+-  **Rapid Fuzz** to select the best search result
+-  **Regex-based** preprocessing for cleaner and more accurate matching
+-  **Web Interface** with HTML (Jinja2 templates)
 -  Side-by-side comparison for smarter buying decisions
 
 ---
 
 ##  Tools Used
 - **Python**
-- **Object-Oriented Programming (OOP)**
 - **Playwright (Async)**
-- **Flask**
+- **FastAPI**
 - **RapidFuzz**
+- **Jinja2 Templates**
+- **AsyncIO**
 - **Regular Expressions (re)**
 
 ---
@@ -79,14 +80,21 @@ pip install -r requirements.txt
 ## Run the bot
 
 ```
+uvicorn app:app --reload
+```
+
+## Run CLI Version
+```
 python main.py
 ```
+
 
 ## Note
 - Use your own User_agent, locale etc in the scraping file(Amazon, Flipkart, Croma, Reliance_Digital)
   
 ## Author
 - Govind H S
+- Python • Automation • Web Scraping • FastAPI
 
 
 

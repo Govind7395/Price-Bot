@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - BrokeBro{% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <h2>About BrokeBro</h2>
+    <p>
+        BrokeBro is your smart assistant for online shopping.
+        It fetches and compares product prices across trusted platforms like
+        <strong>Amazon</strong>, <strong>Flipkart</strong>, <strong>Reliance Digital</strong>, and
+        <strong>Croma</strong>.
+    </p>
+    <p>
+        Our mission is to save you <b>time</b> and <b>money</b> by giving you transparent comparisons in one place.
+        No more switching tabs endlessly — PriceBot does the heavy lifting for you!
+    </p>
+
+    <h3>Why Choose Us?</h3>
+    <ul>
+        <li>✅ Real-time price tracking</li>
+        <li>✅ Clean and distraction-free interface</li>
+        <li>✅ Free and always improving</li>
+    </ul>
+</div>
+
+<style>
+    .about-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        color: #222;
+    }
+
+    .about-container h2 {
+        color: #b30000;
+        margin-bottom: 16px;
+        font-size: 2rem;
+    }
+
+    .about-container h3 {
+        margin-top: 24px;
+        color: #333;
+    }
+
+    .about-container p {
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+
+    .about-container ul {
+        margin-top: 12px;
+        padding-left: 20px;
+    }
+
+    .about-container li {
+        margin-bottom: 8px;
+    }
+</style>
+{% endblock %}

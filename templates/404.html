@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}404 - Page Not Found{% endblock %}
+
+{% block content %}
+<section style="text-align:center;padding:60px 20px;color:#eee;">
+    <h1 style="font-size:3rem;margin-bottom:20px;">404</h1>
+    <h2 style="margin-bottom:20px;">Oops! The page you’re looking for doesn’t exist.</h2>
+    <p style="margin-bottom:30px;">
+        Maybe you mistyped the URL, clicked on something broken, or Spider-Man stole it while swinging by 🕷️.
+    </p>
+    <a href="{{ url_for('index') }}"
+        style="padding:12px 18px;background:#b30000;color:white;border-radius:8px;text-decoration:none;font-weight:600;">
+        🔙 Back to Home
+    </a>
+</section>
+{% endblock %}

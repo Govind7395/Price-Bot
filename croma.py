@@ -93,6 +93,17 @@ class Croma(BaseScraper):
                 except:
                     link = "N/A"
 
+                try:
+                    image_url = await card.locator("img").get_attribute("data-src")
+                    if not image_url:
+                        # fallback if they directly use src sometimes
+                        image_url = await card.locator("img").get_attribute("src")
+
+                    if not image_url:
+                        image_url = "N/A"
+                except:
+                    image_url = "N/A"
+
                 self.results.append(
                     {
                         "site": "Croma",
@@ -100,6 +111,7 @@ class Croma(BaseScraper):
                         "price": price.strip(),
                         "rating": rating.strip(),
                         "link": link.strip(),
+                        "image": image_url.strip(),
                     }
                 )
 

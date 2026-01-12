@@ -21,7 +21,7 @@ class Flipkart(BaseScraper):
                 "Object.defineProperty(navigator, 'webdriver', { get: () => undefined });"
             )
 
-            await page.goto("https://www.flipkart.com/", timeout=15000)
+            await page.goto("https://www.flipkart.com/", timeout=30000)
             await page.mouse.move(random.randint(100, 800), random.randint(100, 600))
             await asyncio.sleep(random.uniform(1, 2))
 
@@ -32,14 +32,14 @@ class Flipkart(BaseScraper):
             except:
                 pass
 
-            search_box = page.locator("input.Pke_EE")
+            search_box = page.locator("input[name='q']")
             await search_box.wait_for(timeout=15000)
             await search_box.click()
             await search_box.type(self.query, delay=200)
             await page.keyboard.press("Enter")
 
-            await page.wait_for_selector("div._75nlfW", timeout=15000)
-            product_cards = await page.locator("div._75nlfW").all()
+            await page.wait_for_selector("div.jIjQ8S", timeout=15000)
+            product_cards = await page.locator("div.jIjQ8S").all()
 
             for card in product_cards[:3]:
                 try:
@@ -78,6 +78,15 @@ class Flipkart(BaseScraper):
                     except:
                         link = "N/A"
 
+                    try:
+                        image_url = await card.locator("img.DByuf4").get_attribute(
+                            "src"
+                        )
+                        if not image_url:
+                            image_url = "N/A"
+                    except:
+                        image_url = "N/A"
+
                     self.results.append(
                         {
                             "site": "Flipkart",
@@ -85,6 +94,7 @@ class Flipkart(BaseScraper):
                             "price": price.strip(),
                             "rating": rating.strip(),
                             "link": link.strip(),
+                            "image": image_url.strip(),
                         }
                     )
 

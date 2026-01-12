@@ -1,44 +1,40 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 {% block content %}
-<div style="max-width: 1100px; margin: auto; padding: 20px;">
-    <h1 style="text-align: center; font-size: 2rem; margin-bottom: 20px;">
-        Search Results for "<span style="color: #007BFF;">{{ query }}</span>"
+<div class="results-container">
+    <h1 class="results-title">
+        Search Results for "<span>{{ query }}</span>"
     </h1>
 
     {% if results %}
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    <div class="results-list">
         {% for result in results %}
-        <div
-            style="border: 1px solid #ddd; padding: 15px; border-radius: 10px; background-color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; flex-direction: column; height: 100%;">
-
-            <!-- Site Name -->
-            <h3 style="margin-bottom: 5px; font-size: 1rem; color: #333;">{{ result['site'] }}</h3>
-
-            <!-- Product Name -->
-            <p style="flex-grow: 1; font-weight: bold; margin-bottom: 10px; color: #111;">
-                {{ result['name'] }}
-            </p>
-
-            <!-- Price -->
-            <p style="color: green; font-size: 1.1rem; font-weight: bold;">Price: {{ result['price'] }}</p>
-
-            <!-- Rating -->
-            {% if result['rating'] %}
-            <p style="color: #f4b400; font-size: 0.9rem;">⭐ {{ result['rating'] }}</p>
+        <div class="product-card">
+            <!-- Left: Image -->
+            {% if result['image'] and result['image'] != "N/A" %}
+            <img src="{{ result['image'] }}" alt="Product Image" class="product-image">
             {% else %}
-            <p style="color: #999; font-size: 0.9rem;">⭐ N/A</p>
+            <div class="product-placeholder">No Image</div>
             {% endif %}
 
-            <!-- View Button -->
-            <a href="{{ result['link'] }}" target="_blank"
-                style="margin-top: auto; display: inline-block; padding: 8px 12px; background-color: #007BFF; color: white; text-align: center; border-radius: 6px; text-decoration: none;">
-                View Product
-            </a>
+            <!-- Right: Details -->
+            <div class="product-details">
+                <h3 class="site-name">{{ result['site'] }}</h3>
+                <p class="product-name">{{ result['name'] }}</p>
+                <p class="product-price">Price: {{ result['price'] }}</p>
+
+                {% if result['rating'] %}
+                <p class="product-rating">⭐ {{ result['rating'] }}</p>
+                {% else %}
+                <p class="product-rating muted">⭐ N/A</p>
+                {% endif %}
+
+                <a href="{{ result['link'] }}" target="_blank" class="view-btn">View Product</a>
+            </div>
         </div>
         {% endfor %}
     </div>
     {% else %}
-    <p style="text-align: center; font-size: 1.2rem; color: #999;">No results found</p>
+    <p class="no-results">No results found</p>
     {% endif %}
 </div>
 {% endblock %}

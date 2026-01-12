@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - PriceBot{% endblock %}
+
+{% block content %}
+<section style="max-width:800px;margin:0 auto;text-align:center;color:#eee;">
+    <h1 style="font-size:2rem;margin-bottom:20px;">Contact Us</h1>
+    <p style="margin-bottom:20px;">
+        Have questions, suggestions, or feedback? We’d love to hear from you.
+    </p>
+
+    <form method="post" action="#" style="display:flex;flex-direction:column;gap:14px;max-width:500px;margin:0 auto;">
+        <input type="text" name="name" placeholder="Your Name" required
+            style="padding:12px;border-radius:6px;border:none;">
+        <input type="email" name="email" placeholder="Your Email" required
+            style="padding:12px;border-radius:6px;border:none;">
+        <textarea name="message" placeholder="Your Message" rows="5" required
+            style="padding:12px;border-radius:6px;border:none;"></textarea>
+        <button type="submit"
+            style="padding:12px;border:none;border-radius:6px;background:#b30000;color:#fff;font-weight:600;cursor:pointer;">
+            Send Message
+        </button>
+    </form>
+</section>
+{% endblock %}

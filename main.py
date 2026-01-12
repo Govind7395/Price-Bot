@@ -82,8 +82,7 @@ async def scrape_product(query):
                 pass
 
         if not all_products:
-            print("No results found.")
-            return
+            return []
 
         # Group results by site
         grouped = defaultdict(list)
@@ -126,6 +125,7 @@ async def scrape_product(query):
                         "price": best_product["price"],
                         "rating": best_product["rating"],
                         "link": best_product["link"],
+                        "image": best_product.get("image"),
                     }
                 )
     return results
@@ -144,6 +144,7 @@ async def cli_main():
             print(f"Price: {r['price']}")
             print(f"Rating: {r['rating']}")
             print(f"Link: {r['link']}")
+            print(f"Image: {r['image']}")
             print("-" * 50)
 
 

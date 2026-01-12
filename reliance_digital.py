@@ -89,6 +89,24 @@ class RelianceDigital(BaseScraper):
                 except:
                     link = "N/A"
 
+                try:
+                    image_url = await card.locator(
+                        'a[class="product-card-image"]'
+                    ).get_attribute("srcset")
+                    if not image_url:
+                        image_url = await card.locator(
+                            'a[class="product-card-image"]'
+                        ).get_attribute("src")
+
+                    if not image_url:
+                        image_url = "N/A"
+                    else:
+                        # srcset can contain multiple URLs like "url1 1x, url2 2x"
+                        # we just take the first one
+                        image_url = image_url.split(",")[0].split()[0]
+                except:
+                    image_url = "N/A"
+
                 self.results.append(
                     {
                         "site": "Reliance Digital",
@@ -96,6 +114,7 @@ class RelianceDigital(BaseScraper):
                         "price": price.strip(),
                         "rating": rating,
                         "link": link.strip(),
+                        "image": image_url.strip(),
                     }
                 )
 

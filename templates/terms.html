@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Terms of Service - PriceBot{% endblock %}
+
+{% block content %}
+<section style="max-width:900px;margin:0 auto;padding:30px;color:#eee;line-height:1.6;">
+    <h1 style="font-size:2.2rem;margin-bottom:20px;">Terms of Service</h1>
+
+    <p><strong>Effective Date:</strong> January 1, 2025</p>
+
+    <p>
+        Welcome to PriceBot. By accessing or using our service, you agree to these Terms.
+        If you don’t agree, please close this tab, go make a sandwich, and forget we exist.
+    </p>
+
+    <h2>1. Use of Service</h2>
+    <p>
+        - You may use PriceBot to compare prices.
+        - You may NOT use PriceBot to summon demons, hack the Matrix, or test your toaster’s WiFi.
+        - We reserve the right to laugh at unreasonable product searches like "unicorn iPhone charger".
+    </p>
+
+    <h2>2. User Responsibilities</h2>
+    <p>
+        - Don’t break our website.
+        - Don’t pretend you own PriceBot unless you’re ready to also handle the bugs.
+        - If you find cheaper prices than us, congrats — we’ll pretend we didn’t see it.
+    </p>
+
+    <h2>3. Limitation of Liability</h2>
+    <p>
+        PriceBot is provided "as is".
+        We are not responsible if:
+        - Your phone explodes while browsing.
+        - You buy 42 blenders because of a typo.
+    </p>
+
+    <h2>4. Modifications</h2>
+    <p>
+        We may update these Terms anytime. Usually around 2 AM, when we’re bored and think
+        “hey, let’s add some more nonsense”.
+    </p>
+
+    <h2>5. Termination</h2>
+    <p>
+        We reserve the right to terminate your access to BrokeBro if:
+        - You misuse the site.
+        - You keep searching “free pizza”.
+        - You insult Spider-Man. That one’s unforgivable.
+    </p>
+
+    <h2>6. Governing Law</h2>
+    <p>
+        These Terms are governed by the laws of Common Sense™ and the International Code of Meme Justice.
+    </p>
+
+    <h2>7. Contact</h2>
+    <p>
+        For questions about these Terms, please see our
+        <a href="{{ url_for('contact') }}" style="color:#ff4d4d;">Contact Page</a>.
+    </p>
+</section>
+{% endblock %}
